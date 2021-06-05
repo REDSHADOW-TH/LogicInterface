@@ -1,4 +1,5 @@
 import { useState, useRef } from 'react';
+import { useRouter } from 'next/router';
 import {
     Card,
     Button,
@@ -16,6 +17,8 @@ import { successAlert, warningAlert } from '../utils/alert';
 import { isNullOrEmpty } from '../utils/general';
 
 export default function index() {
+    const router = useRouter();
+
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const usernameRef = useRef(null);
@@ -32,9 +35,7 @@ export default function index() {
     function login() {
         if (isNullOrEmpty(username) || isNullOrEmpty(password))
             warningAlert('ชื่อผู้ใช้หรือรหัสผ่านว่างเปล่า โปรดใส่ให้ครบถ้วน');
-        else
-            successAlert(`ยินดีต้อนรับ ${username}`)
-            window.eval(`console.log('test eval');`);
+        else router.push('/main');
     }
 
     function enterHandle(e) {
