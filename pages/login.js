@@ -49,7 +49,7 @@ export default function index() {
     return <>
         <Row type="flex" className="d-flex flex-col h-100 justify-content-center align-items-center">
             <Col>
-                <Card title="Termux OS Authentication" style={{ textAlign: 'center', width: '350px' }}>
+                <Card title="OFFICE MANAGE INTERFACE" style={{ textAlign: 'center', width: '350px' }}>
                     <br></br>
                     <Input addonBefore={<UserOutlined />} ref={usernameRef} placeholder="username" onChange={(e) => usernameHandle(e)} onKeyDown={(e) => enterHandle(e)} />
                     <br></br><br></br>
